@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path').resolve()
 
 const students = [
     { nome: 'João', ra: '123', idade: 20, sexo: 'M', media: 7.5, resultado: 'Aprovado' },
@@ -6,11 +7,11 @@ const students = [
     { nome: 'Pedro', ra: '789', idade: 22, sexo: 'M', media: 6.0, resultado: 'Reprovado' }
 ];
 
-function saveToCSV(data, filename='alunos.csv') {
+function saveToCSV(data) {
     let csv = 'nome,ra,idade,sexo,media,resultado\n';  // Header (no hardcode mesmo)
     csv += data.map(obj => Object.values(obj).join(',') ).join('\n');
-    fs.writeFileSync(filename, csv);
-    console.log(`Dados salvos em ${filename}.`);
+    fs.writeFileSync(`${path}/backend/alunos.csv`, csv);
+    console.log(`Dados salvos - alunos.csv`);
 }
 
 function readCSV(filename='alunos.csv') {
