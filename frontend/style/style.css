@@ -1,0 +1,37 @@
+.dropbtn { /*Botão de dropdown*/
+    background-color: #0e7db0;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown { /*Div*/
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content { /*Conteúdo do dropdown (escondido por default)*/
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a { /*Links do dropdown*/
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Cor dos links on-hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Mostrar o dropdown on-hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Mudar cor do dropdown quando o conteúdo é exibido */
+.dropdown:hover .dropbtn {background-color: #256cb4;}
