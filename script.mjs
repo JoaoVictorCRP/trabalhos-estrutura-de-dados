@@ -1,3 +1,5 @@
+import { raDesc } from "./backend/algoritmos.mjs";
+
 class Aluno {
     constructor(nome, ra, idade, sexo, media, resultado) {
         this.nome = nome;
@@ -16,6 +18,8 @@ class Aluno {
 const alunos = [];
 const res = document.querySelector('#res')
 const addButton = document.querySelector('#add-btn');
+const raDescButton = document.querySelector('.ra-desc')
+
 
 addButton.addEventListener('click', () => {
     let nome = prompt('Nome do aluno: ');
@@ -27,4 +31,4 @@ addButton.addEventListener('click', () => {
     res.innerHTML += aluno.toHTML();
 });
 
-
+raDescButton.addEventListener('click', raDesc(alunos))

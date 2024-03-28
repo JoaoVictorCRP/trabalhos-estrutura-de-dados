@@ -1,4 +1,4 @@
-export function quickSort(array) {
+function quickSort(array) {
     if(array.length < 2) return array // se for um número apenas, retorne-o
     else {
         const pivot = array[0];
@@ -9,6 +9,12 @@ export function quickSort(array) {
         }
         return quickSort(menores).concat([pivot], quickSort(maiores)) // Olha a recursividade aí meu povo...
     }
+}
+
+export function raDesc(array){
+    array.array.forEach(element => {
+        
+    });
 }
 // const array = [3,10,8,6]
 // console.log(quickSort(array))
