@@ -1,4 +1,4 @@
-import { raDesc } from "./backend/algoritmos.mjs";
+import { quickSort } from './backend/algoritmos.mjs'
 
 class Aluno {
     constructor(nome, ra, idade, sexo, media, resultado) {
@@ -28,7 +28,12 @@ addButton.addEventListener('click', () => {
     let sexo = prompt(`Sexo do aluno: `);
     let media = Number(prompt('Média do aluno: '));
     let aluno = new Aluno(nome,ra,idade,sexo,media, (media>=6));
-    res.innerHTML += aluno.toHTML();
+    alunos.push(aluno)
+    // res.innerHTML += aluno.toHTML();
 });
 
-raDescButton.addEventListener('click', raDesc(alunos))
+raDescButton.addEventListener('click',() => {
+    for(let obj of quickSort(alunos, 2)) {
+        res.innerHTML+=obj.toHTML()
+    }
+});
