@@ -1,3 +1,13 @@
+.trash-icon {
+    height:20px;
+    /* text-align: ; */
+}
+
+.del {
+    background-color: red;
+    width: 28px;
+}
+
 .dropbtn { /*Botão de dropdown*/
     background-color: #0e7db0;
     color: white;

@@ -1,4 +1,5 @@
 import { quickSort } from './backend/algoritmos.mjs'
+import { carregarArray, stringificarObj} from './backend/crud.mjs';
 
 class Aluno {
     constructor(nome, ra, idade, sexo, media, resultado) {
@@ -15,6 +16,16 @@ class Aluno {
     }
 };
 
+// Carregando array salvo no localStorage
+window.addEventListener('load', () => {
+    const alunosSalvos = carregarArray();
+    alunos.push(...alunosSalvos)
+})
+
+function salvarMudancasNoArray(array) {
+    localStorage.setItem('alunos', JSON.stringify(array));
+};
+
 const alunos = [];
 const res = document.querySelector('#res')
 const addButton = document.querySelector('#add-btn');
@@ -28,12 +39,13 @@ addButton.addEventListener('click', () => {
     let sexo = prompt(`Sexo do aluno: `);
     let media = Number(prompt('Média do aluno: '));
     let aluno = new Aluno(nome,ra,idade,sexo,media, (media>=6));
-    alunos.push(aluno)
-    // res.innerHTML += aluno.toHTML();
+    alunos.push(aluno);
+    salvarMudancasNoArray(alunos);
 });
 
 raDescButton.addEventListener('click',() => {
+    res.innerHTML = '';
     for(let obj of quickSort(alunos, 2)) {
-        res.innerHTML+=obj.toHTML()
+        res.innerHTML+=stringificarObj(obj)
     }
 });

@@ -20,7 +20,3 @@ function Compara(elem1, elem2, atributoComparar){
     }
 
 }
-
-
-// const array = [3,10,8,6]
-// console.log(quickSort(array))
