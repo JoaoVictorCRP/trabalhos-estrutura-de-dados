@@ -1,21 +1,6 @@
 import { quickSort } from './backend/algoritmos.mjs'
 import { carregarArray, stringificarObj} from './backend/crud.mjs';
 
-class Aluno {
-    constructor(nome, ra, idade, sexo, media, resultado) {
-        this.nome = nome;
-        this.ra = ra;
-        this.idade = idade;
-        this.sexo = sexo;
-        this.media = media;
-        this.resultado = resultado;
-    }
-
-    toHTML(){
-        return `<p>Nome: ${this.nome}, RA: ${this.ra}, Idade: ${this.idade}, Sexo: ${this.sexo}, Média: ${this.media}, Resultado: ${this.resultado ? 'Aprovado' : 'Reprovado'}</p>`;
-    }
-};
-
 // Carregando array salvo no localStorage
 window.addEventListener('load', () => {
     const alunosSalvos = carregarArray();
@@ -30,7 +15,6 @@ const alunos = [];
 const input = document.querySelector('.opcao');
 const ok = document.querySelector('.ok');
 ok.addEventListener('click', () => {
-    console.log('du')
     switch(input.value){
         case '1':
             alert('1');
