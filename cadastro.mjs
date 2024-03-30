@@ -1,3 +1,5 @@
+import { stringificarObj } from "./backend/crud.mjs";
+
 class Aluno {
     constructor(nome, ra, idade, sexo, media, resultado) {
         this.nome = nome;
@@ -20,6 +22,8 @@ const checkboxM = document.querySelector('.sexo-m');
 const checkboxF = document.querySelector('.sexo-f');
 const idadeAluno = document.querySelector('.aluno-idade');
 const mediaAluno = document.querySelector('.aluno-media');
+const saida = document.querySelector('.output-alunos');
+const alunos = []; // Lista de alunos, a peça chave do programa
 
 checkboxF.addEventListener('click', () =>{
     checkboxM.checked = false;
@@ -29,12 +33,13 @@ checkboxM.addEventListener('click', () =>{
 });
 
 botaoCadastrar.addEventListener('click', (e) => {
-    e.preventDefault() // Para que não atualize a página
+    e.preventDefault(); // Para que não atualize a página
     const sexoAluno = checkboxM.checked ? 'M' : 'F';
     const resultadoAluno = Number(mediaAluno.value)>=6 ? 'Aprovado':'Reprovado';
-    console.log(sexoAluno)
-    let aluno = new Aluno(nomeAluno.value,raAluno.value, idadeAluno.value, sexoAluno, mediaAluno.value, resultadoAluno)
-    
-    new Aluno()
-    console.log(aluno)
+    console.log(sexoAluno);
+    let aluno = new Aluno(nomeAluno.value,raAluno.value, idadeAluno.value, sexoAluno, mediaAluno.value, resultadoAluno);
+    alunos.push(aluno);
+    for(let a of alunos){
+        saida.innerHTML += stringificarObj(a)
+    }
 })

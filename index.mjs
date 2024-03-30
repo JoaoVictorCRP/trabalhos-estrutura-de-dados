@@ -17,7 +17,7 @@ const ok = document.querySelector('.ok');
 ok.addEventListener('click', () => {
     switch(input.value){
         case '1':
-            alert('1');
+            window.location.href = 'cadastro.html';
             break
         case '2':
             alert('2');

@@ -9,5 +9,5 @@ export function stringificarObj(obj) {
     Sexo: ${obj.sexo}, \
     Média: ${obj.media}, \
     Resultado: ${obj.resultado ? 'Aprovado' : 'Reprovado'}\
-    <button class="del"> <img class="trash-icon" src="./images/trash.png"> </button>`
+    &nbsp <button class="del"> <img class="trash-icon" src="./images/trash.png"> </button>`
 }

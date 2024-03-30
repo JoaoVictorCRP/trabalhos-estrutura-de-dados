@@ -33,20 +33,51 @@ h1{
     align-content: space-around;
 }
 
-button {
+.cadastrar-btn, .ok{
     border: none;
     background: var(--primary-color);
     color: #fff;
     font-size: 15px;
-    /* font-weight: 700; */
     height: 22px;
     cursor: pointer; /*Faz o mouse virar uma "mãozinha" ao dar hover*/
 }
 
-button:hover{
+.cadastrar-btn:hover .ok:hover{
     background: var(--primary-color-darker);
 }
 
-img{
-    max-width: 250px;
+.trash-icon{
+    width: 18px;
 }
+
+.del {
+    border: solid black;
+    width: 35px;
+    height: 35px;
+    background-color: red;
+    cursor: pointer; /*Faz o mouse virar uma "mãozinha" ao dar hover*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-lista {
+    background-color: antiquewhite;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 25px;
+    align-content: space-around;
+}
+
+ .output-alunos {
+    display: flex;
+    flex-wrap: wrap;
+};
+/*
+.output-alunos > div {
+    flex: 0 0 calc(33.33% - 20px);  // Calculando o tamanho de cada item
+    margin: 10px;
+    text-align: center;
+};
+*/
