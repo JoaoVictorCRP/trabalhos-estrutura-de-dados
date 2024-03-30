@@ -1,47 +1,52 @@
-.trash-icon {
-    height:20px;
-    /* text-align: ; */
+:root { /*   declarando Variaveis   */
+    --primary-color: #040d82;
+    --primary-color-darker: #041a6a;
 }
 
-.del {
-    background-color: red;
-    width: 28px;
+
+body {
+    background-color: var(--primary-color);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:rgb(0, 0, 0);
+    text-align: center;
 }
 
-.dropbtn { /*Botão de dropdown*/
-    background-color: #0e7db0;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
+h1{
+    color: #fff;
+}
+
+/* .menu-btn{
+
+} */
+
+*{
+   box-sizing: border-box;
+   outline: 0; 
+}
+
+.menu {
+    background-color: antiquewhite;
+    max-width: 640px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 25px;
+    align-content: space-around;
+}
+
+button {
     border: none;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 15px;
+    /* font-weight: 700; */
+    height: 22px;
+    cursor: pointer; /*Faz o mouse virar uma "mãozinha" ao dar hover*/
 }
 
-.dropdown { /*Div*/
-    position: relative;
-    display: inline-block;
+button:hover{
+    background: var(--primary-color-darker);
 }
 
-.dropdown-content { /*Conteúdo do dropdown (escondido por default)*/
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+img{
+    max-width: 250px;
 }
-
-.dropdown-content a { /*Links do dropdown*/
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Cor dos links on-hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Mostrar o dropdown on-hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Mudar cor do dropdown quando o conteúdo é exibido */
-.dropdown:hover .dropbtn {background-color: #256cb4;}
