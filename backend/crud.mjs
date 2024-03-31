@@ -12,5 +12,3 @@ export function stringificarObj(obj) {
     &nbsp <div class="edit-div"> <button class="edit"> Editar </button> </div>
     &nbsp <div class="del-div"> <button class="del"> Deletar </button> </div>`
 }
-
-// TODO: Testar o botão de "excluir" e "editar" como palavras e não icones...
