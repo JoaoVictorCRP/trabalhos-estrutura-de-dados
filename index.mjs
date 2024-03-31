@@ -11,7 +11,7 @@ function salvarMudancasNoArray(array) {
     localStorage.setItem('alunos', JSON.stringify(array));
 };
 
-let tipoRelatorio = 0; // Variável que será utilizada para a comunicação entre as páginas, com ela saberemos qual tipo de relatório o usuário deseja visualizar
+export let tipoRelatorio = 0; // Variável que será utilizada para a comunicação entre as páginas, com ela saberemos qual tipo de relatório o usuário deseja visualizar
 const alunos = [];
 const input = document.querySelector('.opcao');
 const ok = document.querySelector('.ok');
@@ -22,8 +22,8 @@ ok.addEventListener('click', () => {
             window.location.href = 'cadastro.html';
             break
         case '2':
-            window.location.href = 'relatorio.html';
             tipoRelatorio = 2
+            window.location.href = 'relatorio.html';
             break
         case '3':
             alert('3');
@@ -40,15 +40,3 @@ ok.addEventListener('click', () => {
             alert('Insira uma opção válida.')
     };
 })
-
-
-// addButton.addEventListener('click', () => {
-//     let nome = prompt('Nome do aluno: ');
-//     let ra = prompt(`RA do aluno: `);
-//     let idade = prompt(`idade do aluno: `);
-//     let sexo = prompt(`Sexo do aluno: `);
-//     let media = Number(prompt('Média do aluno: '));
-//     let aluno = new Aluno(nome,ra,idade,sexo,media, (media>=6));
-//     alunos.push(aluno);
-//     salvarMudancasNoArray(alunos);
-// });
