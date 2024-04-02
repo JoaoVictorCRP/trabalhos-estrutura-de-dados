@@ -11,10 +11,19 @@ function salvarMudancasNoArray(array) {
     localStorage.setItem('alunos', JSON.stringify(array));
 };
 
-export let tipoRelatorio = 0; // Variável que será utilizada para a comunicação entre as páginas, com ela saberemos qual tipo de relatório o usuário deseja visualizar
+let tipoRelatorio = 0; // Variável que será utilizada para a comunicação entre as páginas, com ela saberemos qual tipo de relatório o usuário deseja visualizar
 const alunos = [];
 const input = document.querySelector('.opcao');
 const ok = document.querySelector('.ok');
+
+function setRelatorio(valor){
+    tipoRelatorio = valor;
+};
+function getRelatorio(){
+    return tipoRelatorio;
+};
+
+export {setRelatorio, getRelatorio};
 
 document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas com as páginas seguintes, devo esperar o DOM carregar o conteúdo antes de executar o script.
     const ok = document.querySelector('.ok');
@@ -22,11 +31,9 @@ document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas c
     ok.addEventListener('click', () => {
         switch(input.value){
             case '1':
-                window.location.href = 'cadastro.html';
                 break
             case '2':
                 tipoRelatorio = 2
-                window.location.href = 'relatorio.html';
                 break
             case '3':
                 alert('3');
@@ -43,4 +50,7 @@ document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas c
                 alert('Insira uma opção válida.')
         };
     });
+
+
+    // TO DO: COMPÍLAR TODAS AS PÁGINAS EM UMA SÓ, QUE SERÃO EXIBIDAS NA DIV INFERIOR DE ACORDO COM A OPÇÃO DO USUÁRIO!
 });
