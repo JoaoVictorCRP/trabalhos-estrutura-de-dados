@@ -2,10 +2,6 @@ import { quickSort } from './backend/algoritmos.mjs'
 import { carregarArray, stringificarObj} from './backend/crud.mjs';
 import { htmlRelatorio } from './relatorio.mjs';
 
-const alunos = [];
-
-// Carregando array salvo no localStorage
-
 const listaAlunos = JSON.parse(localStorage.getItem('alunos'));
 const input = document.querySelector('.opcao');
 const ok = document.querySelector('.ok');

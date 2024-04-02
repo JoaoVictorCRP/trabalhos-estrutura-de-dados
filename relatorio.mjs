@@ -113,3 +113,8 @@ export function htmlRelatorio(opcao){
 
 
 }
+
+export function tipoRelatorio(opcao){
+    // Função que retorna a lógica por trás do relatório
+    
+}
