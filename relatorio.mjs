@@ -119,17 +119,17 @@ export function tipoRelatorio(opcao, listaAlunos){
     // Função que retorna a lógica por trás do relatório
     if(opcao===2){ // 2 - Ordem crescente por nome
         quickSort(listaAlunos, 2);
+        console.log('Ordenei!')
     };
     passarListaParaOHtml(listaAlunos);
 }
 
 function passarListaParaOHtml(listaOrdenada){
-    document.addEventListener('DOMContentLoaded', () => {
+ 
         const output = document.querySelector('.corpo-tabela')
         output.innerHTML = ''; // Limpando oq já tem.
         listaOrdenada.forEach(elem => {
             console.log('Estou aqui!')
             output.innerHTML += tabelarObj(elem)
-        });
     })
 }

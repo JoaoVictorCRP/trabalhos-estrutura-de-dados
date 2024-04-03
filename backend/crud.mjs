@@ -21,7 +21,7 @@ export function tabelarObj(obj){
     <td>${obj.idade}</td>
     <td>${obj.sexo}</td>
     <td>${obj.media}</td>
-    <td>${obj.resultado}</td>
+    <td>${obj.resultado?'Aprovado':'Reprovado'}</td>
     </tr>
     `
 }
