@@ -1,6 +1,5 @@
-import { quickSort } from './backend/algoritmos.mjs'
 import { carregarArray, stringificarObj} from './backend/crud.mjs';
-import { htmlRelatorio } from './relatorio.mjs';
+import { htmlRelatorio, tipoRelatorio } from './relatorio.mjs';
 
 const listaAlunos = JSON.parse(localStorage.getItem('alunos'));
 const input = document.querySelector('.opcao');
@@ -16,13 +15,13 @@ document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas c
     const ok = document.querySelector('.ok');
 
     ok.addEventListener('click', () => {
-        console.log(Number(input.value))
         switch(Number(input.value)){
             case 1:
                 window.location.href = 'cadastro.html';
                 break
             case 2:
                 res.innerHTML = htmlRelatorio(2)
+                tipoRelatorio(2,listaAlunos)
                 break
             case 3:
                 res.innerHTML = htmlRelatorio(3)

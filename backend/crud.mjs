@@ -12,3 +12,16 @@ export function stringificarObj(obj) {
     &nbsp <div class="edit-div"> <button class="edit"> Editar </button> </div>
     &nbsp <div class="del-div"> <button class="del"> Deletar </button> </div>`
 }
+
+export function tabelarObj(obj){
+    return `
+    <tr>
+    <td>${obj.nome}</td>
+    <td>${obj.ra}</td>
+    <td>${obj.idade}</td>
+    <td>${obj.sexo}</td>
+    <td>${obj.media}</td>
+    <td>${obj.resultado}</td>
+    </tr>
+    `
+}

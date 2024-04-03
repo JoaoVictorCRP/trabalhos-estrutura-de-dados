@@ -1,3 +1,6 @@
+import { quickSort } from './backend/algoritmos.mjs'
+import { tabelarObj } from './backend/crud.mjs'
+
 export function htmlRelatorio(opcao){
     // Função que retorna a estrutura html dos relatório
 
@@ -110,11 +113,23 @@ export function htmlRelatorio(opcao){
             </table>
         </div> </section>`
     };
+};
 
-
+export function tipoRelatorio(opcao, listaAlunos){
+    // Função que retorna a lógica por trás do relatório
+    if(opcao===2){ // 2 - Ordem crescente por nome
+        quickSort(listaAlunos, 2);
+    };
+    passarListaParaOHtml(listaAlunos);
 }
 
-export function tipoRelatorio(opcao){
-    // Função que retorna a lógica por trás do relatório
-    
+function passarListaParaOHtml(listaOrdenada){
+    document.addEventListener('DOMContentLoaded', () => {
+        const output = document.querySelector('.corpo-tabela')
+        output.innerHTML = ''; // Limpando oq já tem.
+        listaOrdenada.forEach(elem => {
+            console.log('Estou aqui!')
+            output.innerHTML += tabelarObj(elem)
+        });
+    })
 }
