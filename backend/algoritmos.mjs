@@ -10,41 +10,37 @@ export function quickSort(array, atributoAComparar) {
         return quickSort(menores).concat([pivot], quickSort(maiores)) // Olha a recursividade aí meu povo...
     }
 };
-
-function Compara(elem1, elem2, atributo){
+function Compara(elem, pivot, atributo){
     if(atributo==2){
-        return elem1.nome >= elem2.nome;
+        console.log(`${elem.nome} é o elemento, ${pivot.nome} é o pivot.`)
+        
+        elem.nome >= pivot.nome ? console.log(`${elem.nome} vem DEPOIS de ${pivot.nome}`) : console.log(`${elem.nome} vem ANTES de ${pivot.nome}`);
+
+        return elem.nome >= pivot.nome;
     }
     if(atributo==3){
-        return elem1.ra >= elem2.ra;
+        return elem.ra >= pivot.ra;
     }
 }
 
 const test= [
     {
-        "nome": "Joao",
-        "ra": 1201,
-        "idade": "49",
-        "sexo": "M",
-        "media": "7",
-        "resultado": true
+        "nome": "Tico",
+        "ra": 12,
     },
     {
-        "nome": "Zequinha de Abreu",
-        "ra": 55,
-        "idade": "60",
-        "sexo": "M",
-        "media": "4",
-        "resultado": false
+        "nome": "Fer",
+        "ra": 88,
     },
     {
-        "nome": "Tiago mota dos santos",
+        "nome": "Arnaldo",
         "ra": 79,
-        "idade": "44",
-        "sexo": "M",
-        "media": "9",
-        "resultado": true
+    },
+    {
+        "nome": "Baldo",
+        "ra":53
     }
 ]
 
-console.log(quickSort(test))
+console.log('Pré-QS: ',test)
+console.log('Pós-QS: ',quickSort(test, 2))

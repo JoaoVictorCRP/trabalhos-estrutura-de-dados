@@ -119,8 +119,11 @@ export function tipoRelatorio(opcao, listaAlunos){
     // Função que retorna a lógica por trás do relatório
     if(opcao===2){ // 2 - Ordem crescente por nome
         listaAlunos = quickSort(listaAlunos, 2);
-        console.log('Ordenei!')
     };
+    if(opcao==3){ // 3 - Ordem decrescete por RA
+        listaAlunos = quickSort(listaAlunos, 3);
+    }
+
     passarListaParaOHtml(listaAlunos);
 }
 

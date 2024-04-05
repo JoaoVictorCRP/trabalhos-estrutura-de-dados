@@ -30,7 +30,7 @@ if (alunosSalvosJSON){
 document.addEventListener('DOMContentLoaded',() =>{
     const botaoCadastrar = document.querySelector('.cadastrar-btn');
     const nomeAluno = document.querySelector('.aluno-nome');
-    const raAluno = document.querySelector('.aluno-ra');
+    const raAluno = document.querySelector('.aluno-ra'); // Obs: RA deve ser do tipo number para que a ordenação funcione corretamente.
     const checkboxM = document.querySelector('.sexo-m');
     const checkboxF = document.querySelector('.sexo-f');
     const idadeAluno = document.querySelector('.aluno-idade');
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded',() =>{
         e.preventDefault(); // Para que não atualize a página
         const sexoAluno = checkboxM.checked ? 'M' : 'F';
         const resultadoAluno = (mediaAluno.value)>=6
-        let aluno = new Aluno(nomeAluno.value,raAluno.value, idadeAluno.value, sexoAluno, mediaAluno.value, resultadoAluno);
+        let aluno = new Aluno(nomeAluno.value,Number(raAluno.value), idadeAluno.value, sexoAluno, mediaAluno.value, resultadoAluno);
         alunos.push(aluno);
         localStorage.setItem('alunos', JSON.stringify(alunos))         // Colocando a lista no localStorage, desta forma é possível pegá-lo no index.
 

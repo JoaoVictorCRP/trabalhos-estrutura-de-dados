@@ -36,5 +36,4 @@ document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas c
     cadastrarBotao.addEventListener('click',() =>{
         window.location.href='cadastro.html';
     })
-    localStorage.clear()
 });
