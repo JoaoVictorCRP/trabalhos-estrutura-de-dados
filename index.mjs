@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas c
                 break
             case 'rel-ra':
                 res.innerHTML = htmlRelatorio(3)
+                tipoRelatorio(3,listaAlunos);
                 break;
             case 'rel-aprovados':
                 res.innerHTML = htmlRelatorio(4)
@@ -35,4 +36,5 @@ document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas c
     cadastrarBotao.addEventListener('click',() =>{
         window.location.href='cadastro.html';
     })
+    localStorage.clear()
 });
