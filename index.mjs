@@ -2,9 +2,8 @@ import { carregarArray, stringificarObj} from './backend/crud.mjs';
 import { htmlRelatorio, tipoRelatorio } from './relatorio.mjs';
 
 const listaAlunos = JSON.parse(localStorage.getItem('alunos'));
-const input = document.querySelector('.opcao');
-const ok = document.querySelector('.ok');
 const res = document.querySelector('.res');
+
 if(listaAlunos){
     console.log(listaAlunos);
 } else {
@@ -12,29 +11,28 @@ if(listaAlunos){
 }
 
 document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas com as páginas seguintes, devo esperar o DOM carregar o conteúdo antes de executar o script.
-    const ok = document.querySelector('.ok');
+    const cadastrarBotao = document.querySelector('.cadastrar-btn')
+    const relatorioBotao = document.querySelector('.gerar-rel-btn')
+    const opcaoRelatorio = document.querySelector('.tipo-rel')
 
-    ok.addEventListener('click', () => {
-        switch(Number(input.value)){
-            case 1:
-                window.location.href = 'cadastro.html';
-                break
-            case 2:
+
+    relatorioBotao.addEventListener('click',() =>{
+        switch(opcaoRelatorio.value){
+            case 'rel-nome':
                 res.innerHTML = htmlRelatorio(2)
-                tipoRelatorio(2,listaAlunos)
+                tipoRelatorio(2,listaAlunos);
                 break
-            case 3:
+            case 'rel-ra':
                 res.innerHTML = htmlRelatorio(3)
                 break;
-            case 4:
+            case 'rel-aprovados':
                 res.innerHTML = htmlRelatorio(4)
                 break;
-            case 5:
-                alert('5');
-                break
             default:
-                alert('Insira uma opção válida.')
-        };
+                alert('Nenhuma opção de relatório foi selecionada!');
+        }
     });
-
+    cadastrarBotao.addEventListener('click',() =>{
+        window.location.href='cadastro.html';
+    })
 });

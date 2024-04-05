@@ -4,7 +4,7 @@ import { tabelarObj } from './backend/crud.mjs'
 export function htmlRelatorio(opcao){
     // Função que retorna a estrutura html dos relatório
 
-    if (opcao===2){
+    if (opcao==2){
         return `<section class="menu"> <h3 class="titulo-relatorio">Relatório em ordem crescente por nome</h3>
 
         <div class="div-tabela">
@@ -40,7 +40,7 @@ export function htmlRelatorio(opcao){
                 </tfoot>
             </table>
         </div> </section>`
-    } else if (opcao===3) {
+    } else if (opcao==3) {
         return `<section class="menu"> <h3 class="titulo-relatorio">Relatório em ordem decrescente por RA</h3>
 
         <div class="div-tabela">
@@ -76,7 +76,7 @@ export function htmlRelatorio(opcao){
                 </tfoot>
             </table>
         </div> </section>`
-    } else if (opcao===4) {
+    } else if (opcao==4) {
         return `<section class="menu"> <h3 class="titulo-relatorio">Relatório de aprovados em ordem crescente, por nome</h3>
 
         <div class="div-tabela">
