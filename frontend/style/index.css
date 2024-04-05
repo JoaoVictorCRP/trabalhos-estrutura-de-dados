@@ -1,0 +1,30 @@
+:root { /*   declarando Variaveis   */
+    --primary-color: #005C6D;
+    --primary-color-darker: #004854;
+}
+
+.cad-aluno-btn {
+    background-color: var(--primary-color);
+    width: 400px;
+}
+
+.sair-btn {
+    background-color: #B20000;
+    min-width: 130px;
+}
+
+.gerar-rel-btn {    
+    background-color: #A0C340;
+}
+
+.cadastrar-btn:hover{
+    background: var(--primary-color-darker);
+}
+
+.gerar-rel-btn:hover{
+    background-color: #5e7225;
+}
+
+.sair-btn:hover{
+    background-color: #7E0000;
+}

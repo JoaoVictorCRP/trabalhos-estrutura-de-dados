@@ -5,15 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Administrativo Estudantil</title>
     <link href="./style/style.css" rel="stylesheet">
-    <link href="./style/relatorio.css" rel="stylesheet">
+    <link href="./style/index.css" rel="stylesheet">
 <body>
     <a href="./index.html"> <h1> Painel Administrativo Estudantil</h1> </a>
     <section class="menu">
         <h3>Entre com uma das opções abaixo:</h3>
-        <button class="cad-aluno">Cadastrar aluno</button><br>
-        <button class="rel-nome">Relatório de alunos em ordem crescente por nome</button><br>
-        <button class="rel-ra">Relatório de alunos em ordem decrescente por RA</button><br>
-        <button class="rel-aprovados">Relatório de alunos aprovados em ordem crescente por nome</button><br>
+        <!-- <div class="btn-group"> -->
+            <button class="cadastrar-btn">Cadastrar aluno</button><br><br>
+            
+            <label for="tipo-rel-dpdwn">Gerar relatório:</label>
+            <select id="tipo-rel-dpdwn"> 
+                <option value="rel-nome">Ordem crescente por nome</option> 
+                <option value="rel-ra">Ordem decrescente por RA</option> 
+                <option value="rel-aprovados">Ordem crescente - Por Nome (Apenas aprovados) </option> 
+            </select>
+            <button class="gerar-rel-btn">Gerar</button>
+            <br><br>
+
+            <button class="sair-btn">Sair do Programa</button><br>
+        <!-- </div> -->
     </section>
     <div class="res">
         

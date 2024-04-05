@@ -1,8 +1,7 @@
 :root { /*   declarando Variaveis   */
-    --primary-color: #040d82;
-    --primary-color-darker: #041a6a;
+    --primary-color: #005C6D;
+    --primary-color-darker: #004854;
 }
-
 
 body {
     background-color: var(--primary-color);
@@ -15,9 +14,16 @@ h1{
     color: #fff;
 }
 
-/* .menu-btn{
-
-} */
+button {
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer; /*Faz o mouse virar uma "mãozinha" ao dar hover*/
+    border: none;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 15px;
+    height: 22px;
+}
 
 *{
    box-sizing: border-box;
@@ -32,21 +38,6 @@ h1{
     border-radius: 25px;
     align-content: space-around;
 }
-
-.cadastrar-btn, .ok{
-    border: none;
-    background: var(--primary-color);
-    color: #fff;
-    font-size: 15px;
-    height: 22px;
-    cursor: pointer; /*Faz o mouse virar uma "mãozinha" ao dar hover*/
-}
-
-.cadastrar-btn:hover .ok:hover{
-    background: var(--primary-color-darker);
-}
-
-
 
 .del-div, .edit-div {
     padding-top: 13px;
@@ -83,9 +74,3 @@ h1{
     display: flex;
     flex-wrap: wrap;
 };
-
-/* .output-alunos > div {
-    flex: 0 0 calc(33.33% - 20px); 
-    margin: 10px;
-    text-align: center;
-}; */
