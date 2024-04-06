@@ -43,5 +43,6 @@ document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas c
     apagarLista.addEventListener('click', ()=>{
         localStorage.clear();
         alert('A lista foi limpada com sucesso!')
+        window.location.reload()
     })
 });

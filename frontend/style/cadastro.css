@@ -49,3 +49,7 @@ span {
     display: flex;
     align-items: flex-end;
 }
+
+.rodape {
+    color: #fff;
+}
