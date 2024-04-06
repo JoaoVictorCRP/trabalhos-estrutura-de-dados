@@ -28,3 +28,18 @@
 .sair-btn:hover{
     background-color: #7E0000;
 }
+
+.div-limpar{
+    text-align: left;
+    padding: none;
+}
+
+.limpar-btn{
+    background-color: #7E0000;
+    width: 75px;
+    min-width: 2px;
+    font-size: 12px;
+}
+.limpar-btn:hover{
+    background-color: #7e0000a0;
+}
