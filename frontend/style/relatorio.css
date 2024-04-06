@@ -3,18 +3,6 @@
     --primary-color-darker: #041a6a;
 }
 
-
-body {
-    background-color: var(--primary-color);
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color:rgb(0, 0, 0);
-    text-align: center;
-}
-
-h1{
-    color: #fff;
-}
-
 *{
    box-sizing: border-box;
    outline: 0; 
@@ -56,4 +44,8 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+tr {
+    text-align: left;
 }

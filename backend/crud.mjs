@@ -8,9 +8,7 @@ export function stringificarObj(obj) {
     Idade:${obj.idade}, \
     Sexo: ${obj.sexo}, \
     Média: ${obj.media}, \
-    Resultado: ${obj.resultado ? 'Aprovado' : 'Reprovado'}\
-    &nbsp <div class="edit-div"> <button class="edit"> Editar </button> </div>
-    &nbsp <div class="del-div"> <button class="del"> Deletar </button> </div>`
+    Resultado: ${obj.resultado ? '<span style="color:green">Aprovado</span>' : '<span style="color:red">Reprovado</span>'}\<br>`
 }
 
 export function tabelarObj(obj){

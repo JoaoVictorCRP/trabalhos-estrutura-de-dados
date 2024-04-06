@@ -43,4 +43,9 @@
 
 .voltar-btn:hover{
     background-color: #7e0000a0;
+} 
+
+span {
+    display: flex;
+    align-items: flex-end;
 }

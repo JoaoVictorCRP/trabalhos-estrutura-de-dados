@@ -21,10 +21,8 @@ export function htmlRelatorio(opcao){
                 </tr>
                 </thead>
                 <tbody class="corpo-tabela">
-    
                 </tbody>
     
-                <!-- Roda pé da tabela-->
                 <tfoot>
                 <tr>
                     <!-- <th scope="row" colspan="2">Média de Aprovados</th> -->
@@ -50,17 +48,8 @@ export function htmlRelatorio(opcao){
                 </tr>
                 </thead>
                 <tbody class="corpo-tabela">
-                <tr>
-                    <td>Tico</td>
-                    <td>109048</td>
-                    <td>22</td>
-                    <td>Masculino</td>
-                    <td>7.8</td>
-                    <td>Aprovado</td>
-                </tr>
                 </tbody>
-    
-                <!-- Roda pé da tabela-->
+
                 <tfoot>
                 <tr>
                     <!-- <th scope="row" colspan="2">Média de Aprovados</th> -->
@@ -87,16 +76,10 @@ export function htmlRelatorio(opcao){
                 </thead>
                 <tbody class="corpo-tabela">
                 <tr>
-                    <td>Tico</td>
-                    <td>109048</td>
-                    <td>22</td>
-                    <td>Masculino</td>
-                    <td>7.8</td>
-                    <td>Aprovado</td>
+
                 </tr>
                 </tbody>
     
-                <!-- Roda pé da tabela-->
                 <tfoot>
                 <tr>
                     <!-- <th scope="row" colspan="2">Média de Aprovados</th> -->
