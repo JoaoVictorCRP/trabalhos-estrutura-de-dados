@@ -1,27 +1,17 @@
-export function quickSort(array, atributoAComparar) {
-    if(array.length < 2) return array // se for um número apenas, retorne-o
-    else {
-        const pivot = array[0];
-        let maiores = [];
-        let menores = [];
-        for(let i=1;i<array.length;i++){
-            Compara(array[i], pivot, atributoAComparar) ? maiores.push(array[i]) : menores.push(array[i])
-        }
-        return quickSort(menores).concat([pivot], quickSort(maiores)) // Olha a recursividade aí meu povo...
-    }
+export function selectionSort(array, fnComparacao){
+    for(let posSel=0; posSel<array.length - 1;posSel++){ // Loop de posição selecionada (valor isolado)
+        let posMenor = posSel+1;
+        for(let i = posMenor+1;i<array.length; i++){ // Neste loop olharemos o último elemento também, portanto nada de length-1.
+            if(fnComparacao(array[posMenor], array[i])){
+                posMenor=i;
+            };
+        };
+        if(fnComparacao(array[posSel], array[posMenor]) ){ // Comparando o valor isolado e o menor dentre os analisados.
+            [ array[posSel], array[posMenor] ] = [ array[posMenor], array[posSel] ];
+        };
+    };
 };
-function Compara(elem, pivot, atributo){
-    if(atributo==2){
-        console.log(`${elem.nome} é o elemento, ${pivot.nome} é o pivot.`)
-        
-        elem.nome >= pivot.nome ? console.log(`${elem.nome} vem DEPOIS de ${pivot.nome}`) : console.log(`${elem.nome} vem ANTES de ${pivot.nome}`);
 
-        return elem.nome >= pivot.nome;
-    }
-    if(atributo==3){
-        return elem.ra >= pivot.ra;
-    }
-}
 
 const test= [
     {
@@ -42,5 +32,6 @@ const test= [
     }
 ]
 
-console.log('Pré-QS: ',test)
-console.log('Pós-QS: ',quickSort(test, 2))
+// console.log('Pré-SS: ',test)
+// selectionSort(test,(elem1, elem2)=>{ return elem1.nome >= elem2.nome})
+// console.log('Pós-SS: ', test)

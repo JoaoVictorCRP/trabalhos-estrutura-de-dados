@@ -10,7 +10,7 @@
 - Delete: Remover um aluno da lista.
 
 ## Algoritmos de Ordenação e Busca:
-- Ordenação: Quicksort?
+- Ordenação: Selection Sort
 - Busca: Busca Binária?
 
 ## Front-end (HTML/CSS):

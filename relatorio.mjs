@@ -1,4 +1,4 @@
-import { quickSort } from './backend/algoritmos.mjs'
+import { selectionSort } from './backend/algoritmos.mjs'
 import { tabelarObj } from './backend/crud.mjs'
 
 export function htmlRelatorio(opcao){
@@ -118,10 +118,10 @@ export function htmlRelatorio(opcao){
 export function tipoRelatorio(opcao, listaAlunos){
     // Função que retorna a lógica por trás do relatório
     if(opcao===2){ // 2 - Ordem crescente por nome
-        listaAlunos = quickSort(listaAlunos, 2);
+        selectionSort(listaAlunos, (elem1, elem2)=> { return elem1.nome >= elem2.nome});
     };
     if(opcao==3){ // 3 - Ordem decrescete por RA
-        listaAlunos = quickSort(listaAlunos, 3);
+        selectionSort(listaAlunos, () => { return elem1.ra >= elem2.ra});
     }
 
     passarListaParaOHtml(listaAlunos);
