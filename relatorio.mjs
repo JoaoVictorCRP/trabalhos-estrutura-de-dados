@@ -121,9 +121,11 @@ export function tipoRelatorio(opcao, listaAlunos){
         selectionSort(listaAlunos, (elem1, elem2)=> { return elem1.nome >= elem2.nome});
     };
     if(opcao==3){ // 3 - Ordem decrescete por RA
-        selectionSort(listaAlunos, () => { return elem1.ra >= elem2.ra});
+        selectionSort(listaAlunos, (elem1, elem2) => { return elem1.ra <= elem2.ra});
     }
-
+    if(opcao==4){// 4 - Ordem crescente por nome, apenas aprovados
+        selectionSort(listaAlunos, ((elem1, elem2)=> { return elem1.nome >= elem2.nome}), true)
+    }
     passarListaParaOHtml(listaAlunos);
 }
 

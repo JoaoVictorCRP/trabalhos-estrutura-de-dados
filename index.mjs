@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas c
                 break;
             case 'rel-aprovados':
                 res.innerHTML = htmlRelatorio(4)
+                tipoRelatorio(4, listaAlunos);
                 break;
             default:
                 alert('Nenhuma opção de relatório foi selecionada!');
