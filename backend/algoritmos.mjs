@@ -1,6 +1,4 @@
-export function selectionSort(array, fnComparacao, somenteAprovados=false){
-    if(somenteAprovados) array = array.filter(checkarAprovados);
-
+export function selectionSort(array, fnComparacao){
     for(let posSel=0; posSel<array.length - 1;posSel++){ // Loop de posição selecionada (valor isolado)
         let posMenor = posSel+1;
         for(let i = posMenor+1;i<array.length; i++){ // Neste loop olharemos o último elemento também, portanto nada de length-1.
@@ -13,10 +11,6 @@ export function selectionSort(array, fnComparacao, somenteAprovados=false){
         };
     };
 };
-
-function checkarAprovados(elemento){
-    return elemento.resultado
-}
 
 const test= [
     {

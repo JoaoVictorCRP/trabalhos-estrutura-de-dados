@@ -124,9 +124,14 @@ export function tipoRelatorio(opcao, listaAlunos){
         selectionSort(listaAlunos, (elem1, elem2) => { return elem1.ra <= elem2.ra});
     }
     if(opcao==4){// 4 - Ordem crescente por nome, apenas aprovados
-        selectionSort(listaAlunos, ((elem1, elem2)=> { return elem1.nome >= elem2.nome}), true)
+        selectionSort(listaAlunos, ((elem1, elem2)=> { return elem1.nome >= elem2.nome} ))
+        listaAlunos = listaAlunos.filter(checkarAprovados)
     }
     passarListaParaOHtml(listaAlunos);
+}
+
+function checkarAprovados(elemento){
+    return elemento.resultado
 }
 
 function passarListaParaOHtml(listaOrdenada){
