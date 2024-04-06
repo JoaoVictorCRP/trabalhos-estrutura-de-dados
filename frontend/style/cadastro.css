@@ -1,0 +1,46 @@
+:root { /*   declarando Variaveis   */
+    --primary-color: #005C6D;
+    --primary-color-darker: #004854;
+}
+
+.cadastrar-btn:hover {
+    background-color: var(--primary-color-darker);
+}
+
+.del-div, .edit-div {
+    padding-top: 13px;
+}
+
+.edit {
+    color: #fff;
+    border: solid black;
+    height: 25px;
+    background-color: rgb(1, 138, 131);
+    cursor: pointer; /*Faz o mouse virar uma "mãozinha" ao dar hover*/
+    padding-top: 2px;
+}
+
+.del {
+    color: #fff;
+    border: solid black;
+    height: 25px;
+    background-color: red;
+    padding-top: 2px;
+}
+
+.div-voltar {
+    text-align: left;
+}
+
+.voltar-btn {
+    background-color: #7E0000;
+    height: 25px;
+    width: 50px;
+    min-width: 50px;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+.voltar-btn:hover{
+    background-color: #7e0000a0;
+}

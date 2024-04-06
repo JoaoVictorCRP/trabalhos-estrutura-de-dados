@@ -31,14 +31,13 @@
 
 .div-limpar{
     text-align: left;
-    padding: none;
 }
 
 .limpar-btn{
     background-color: #7E0000;
-    width: 75px;
-    min-width: 2px;
+    min-width: 80px;
     font-size: 12px;
+    font-weight: bolder;
 }
 .limpar-btn:hover{
     background-color: #7e0000a0;

@@ -57,11 +57,3 @@ table {
     justify-content: center;
     align-items: center;
 }
-
-.voltar-btn {
-    background-color: red;
-    color: #fff;
-    cursor: pointer;
-    height: 25px;
-    border-radius: 5px;
-}

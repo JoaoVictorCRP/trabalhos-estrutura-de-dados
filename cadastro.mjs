@@ -15,6 +15,10 @@ class Aluno {
     }
 };
 
+function limparFormulario(){
+
+}
+
 const saida = document.querySelector('.output-alunos');
 const alunosSalvosJSON = localStorage.getItem('alunos'); 
 let alunos = [];
@@ -28,7 +32,9 @@ if (alunosSalvosJSON){
 
 
 document.addEventListener('DOMContentLoaded',() =>{
+    const form = document.querySelector('.form-aluno');
     const botaoCadastrar = document.querySelector('.cadastrar-btn');
+    const botaoVoltar = document.querySelector('.voltar-btn')
     const nomeAluno = document.querySelector('.aluno-nome');
     const raAluno = document.querySelector('.aluno-ra'); // Obs: RA deve ser do tipo number para que a ordenação funcione corretamente.
     const checkboxM = document.querySelector('.sexo-m');
@@ -50,7 +56,11 @@ document.addEventListener('DOMContentLoaded',() =>{
         let aluno = new Aluno(nomeAluno.value,Number(raAluno.value), idadeAluno.value, sexoAluno, mediaAluno.value, resultadoAluno);
         alunos.push(aluno);
         localStorage.setItem('alunos', JSON.stringify(alunos))         // Colocando a lista no localStorage, desta forma é possível pegá-lo no index.
-
         saida.innerHTML += stringificarObj(aluno)
+        form.reset()
     });
+
+    botaoVoltar.addEventListener('click', () => {
+        window.location.href='index.html'
+    })
 });
