@@ -1,4 +1,3 @@
-import { carregarArray, stringificarObj} from './backend/crud.mjs';
 import { htmlRelatorio, tipoRelatorio } from './relatorio.mjs';
 
 const listaAlunos = JSON.parse(localStorage.getItem('alunos'));
@@ -15,9 +14,10 @@ document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas c
     const relatorioBotao = document.querySelector('.gerar-rel-btn')
     const opcaoRelatorio = document.querySelector('.tipo-rel')
     const apagarLista = document.querySelector('.limpar-btn')
+    const sairBotao = document.querySelector('.sair-btn')
 
     // Clique no botão de gerar relatório
-    relatorioBotao.addEventListener('click',() =>{
+    relatorioBotao.addEventListener('click',() => {
         switch(opcaoRelatorio.value){
             case 'rel-nome':
                 res.innerHTML = htmlRelatorio(2)
@@ -36,13 +36,17 @@ document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas c
         }
     });
     // Clique no botão de cadastrar aluno
-    cadastrarBotao.addEventListener('click',() =>{
+    cadastrarBotao.addEventListener('click',() => {
         window.location.href='cadastro.html';
     });
     // Clique no botão de limpar lista
-    apagarLista.addEventListener('click', ()=>{
+    apagarLista.addEventListener('click', () => {
         localStorage.clear();
         alert('A lista foi limpada com sucesso!')
         window.location.reload()
+    })
+    // Clique no botão de sair do programa
+    sairBotao.addEventListener('click', () => {
+        window.close() // Observação: essa função não funciona em navegadores baseados no chromium...
     })
 });

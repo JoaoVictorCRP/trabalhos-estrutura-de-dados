@@ -1,4 +1,4 @@
-import { stringificarObj } from "./backend/crud.mjs";
+import { stringificarObj } from "./crud.mjs";
 
 class Aluno {
     constructor(nome, ra, idade, sexo, media, resultado) {
@@ -14,10 +14,6 @@ class Aluno {
         return `<p>Nome: ${this.nome}, RA: ${this.ra}, Idade: ${this.idade}, Sexo: ${this.sexo}, Média: ${this.media}, Resultado: ${this.resultado ? 'Aprovado' : 'Reprovado'}</p>`;
     }
 };
-
-function limparFormulario(){
-
-}
 
 const saida = document.querySelector('.output-alunos');
 const alunosSalvosJSON = localStorage.getItem('alunos'); 
@@ -36,7 +32,7 @@ document.addEventListener('DOMContentLoaded',() =>{
     const botaoCadastrar = document.querySelector('.cadastrar-btn');
     const botaoVoltar = document.querySelector('.voltar-btn')
     const nomeAluno = document.querySelector('.aluno-nome');
-    const raAluno = document.querySelector('.aluno-ra'); // Obs: RA deve ser do tipo number para que a ordenação funcione corretamente.
+    const raAluno = document.querySelector('.aluno-ra');
     const checkboxM = document.querySelector('.sexo-m');
     const checkboxF = document.querySelector('.sexo-f');
     const idadeAluno = document.querySelector('.aluno-idade');

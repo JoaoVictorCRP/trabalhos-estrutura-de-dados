@@ -12,21 +12,44 @@ export function selectionSort(array, fnComparacao){
     };
 };
 
-const test= [
-    {
-        "nome": "Tico",
-        "ra": 12,
-    },
-    {
-        "nome": "Fer",
-        "ra": 88,
-    },
-    {
-        "nome": "Arnaldo",
-        "ra": 79,
-    },
-    {
-        "nome": "Baldo",
-        "ra":53
-    }
-]
+
+// DESCARTADO:
+// function quickSort(array, fnComparacao){
+//     if(array.length <= 1) {
+//         return array;
+//     }
+
+//     let pivot = array[0];
+//     let menores = [];
+//     let maiores = [];
+
+//     for(let i=1;i<array.length;i++){
+//         fnComparacao(array[i], pivot) ? maiores.push(array[i]) : menores.push(array[i])
+//     }
+//     return [...quickSort(menores, fnComparacao), pivot, ...quickSort(maiores, fnComparacao)]
+// }
+
+// const test= [
+//     {
+//         "nome": "Tico",
+//         "ra": 12,
+//     },
+//     {
+//         "nome": "Fer",
+//         "ra": 88,
+//     },
+//     {
+//         "nome": "Arnaldo",
+//         "ra": 79,
+//     },
+//     {
+//         "nome": "Baldo",
+//         "ra":53
+//     }
+// ]
+
+// function comp(e1,e2){
+//     return e1.nome >= e2.nome
+// }
+// const foo = quickSort(test, comp)
+// console.log(foo)

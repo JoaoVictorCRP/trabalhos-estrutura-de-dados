@@ -114,7 +114,6 @@ function passarListaParaOHtml(listaOrdenada){
     const output = document.querySelector('.corpo-tabela')
     output.innerHTML = ''; // Limpando oq já tem.
     listaOrdenada.forEach(elem => {
-        console.log('Estou aqui!')
         output.innerHTML += tabelarObj(elem)
     });
 };
