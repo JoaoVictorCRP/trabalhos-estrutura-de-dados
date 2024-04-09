@@ -48,6 +48,6 @@ document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas n
     // Clique no botão de sair do programa
     sairBotao.addEventListener('click', () => {
         alert('Observação: a função window.close() não funciona corretamente em navegadores baseados no chromium. \n\nCaso a página não seja fechada, verifique o console!')
-        window.close() // Observação: essa função não funciona em navegadores baseados no chromium...
+        window.close()
     })
 });

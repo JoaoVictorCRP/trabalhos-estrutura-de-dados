@@ -60,10 +60,9 @@ document.addEventListener('DOMContentLoaded',() =>{
         const sexoAluno = checkboxM.checked ? 'M' : 'F';
         const resultadoAluno = (mediaAluno.value)>=6
         if(validarForm()){
-            // Há algum outro jeito de verificar se os dados do formulário não estão vazios?
             let aluno = new Aluno(nomeAluno.value,Number(raAluno.value), idadeAluno.value, sexoAluno, mediaAluno.value, resultadoAluno);
             alunos.push(aluno);
-            localStorage.setItem('alunos', JSON.stringify(alunos))         // Colocando a lista no localStorage, desta forma é possível pegá-lo no index.
+            localStorage.setItem('alunos', JSON.stringify(alunos))  // Colocando a lista no localStorage, desta forma é possível pegá-lo no index.
             saida.innerHTML += stringificarObj(aluno)
             form.reset()
             nomeAluno.focus()

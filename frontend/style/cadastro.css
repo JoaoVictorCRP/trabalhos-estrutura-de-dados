@@ -1,4 +1,4 @@
-:root { /*   declarando Variaveis   */
+:root { 
     --primary-color: #005C6D;
     --primary-color-darker: #004854;
 }
@@ -16,7 +16,7 @@
     border: solid black;
     height: 25px;
     background-color: rgb(1, 138, 131);
-    cursor: pointer; /*Faz o mouse virar uma "mãozinha" ao dar hover*/
+    cursor: pointer;
     padding-top: 2px;
 }
 
