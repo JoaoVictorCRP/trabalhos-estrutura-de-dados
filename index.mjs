@@ -9,7 +9,7 @@ if(listaAlunos){
     console.log('Não foi encontrado no Local storage.')
 }
 
-document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas com as páginas seguintes, devo esperar o DOM carregar o conteúdo antes de executar o script.
+document.addEventListener('DOMContentLoaded', () => { // Para evitar problemas no querySelector devo esperar o DOM carregar o conteúdo antes de executar o script.
     const cadastrarBotao = document.querySelector('.cadastrar-btn')
     const relatorioBotao = document.querySelector('.gerar-rel-btn')
     const opcaoRelatorio = document.querySelector('.tipo-rel')

@@ -15,6 +15,16 @@ class Aluno {
     }
 };
 
+function validarForm(){
+    const camposObrigatorios = document.querySelectorAll('.form-aluno [required');
+    for(let campo of camposObrigatorios){
+        if(!campo.value){
+            return false
+        }
+    }
+    return true;
+}
+
 const saida = document.querySelector('.output-alunos');
 const alunosSalvosJSON = localStorage.getItem('alunos'); 
 let alunos = [];
@@ -49,11 +59,17 @@ document.addEventListener('DOMContentLoaded',() =>{
         e.preventDefault(); // Para que não atualize a página
         const sexoAluno = checkboxM.checked ? 'M' : 'F';
         const resultadoAluno = (mediaAluno.value)>=6
-        let aluno = new Aluno(nomeAluno.value,Number(raAluno.value), idadeAluno.value, sexoAluno, mediaAluno.value, resultadoAluno);
-        alunos.push(aluno);
-        localStorage.setItem('alunos', JSON.stringify(alunos))         // Colocando a lista no localStorage, desta forma é possível pegá-lo no index.
-        saida.innerHTML += stringificarObj(aluno)
-        form.reset()
+        if(validarForm()){
+            // Há algum outro jeito de verificar se os dados do formulário não estão vazios?
+            let aluno = new Aluno(nomeAluno.value,Number(raAluno.value), idadeAluno.value, sexoAluno, mediaAluno.value, resultadoAluno);
+            alunos.push(aluno);
+            localStorage.setItem('alunos', JSON.stringify(alunos))         // Colocando a lista no localStorage, desta forma é possível pegá-lo no index.
+            saida.innerHTML += stringificarObj(aluno)
+            form.reset()
+            nomeAluno.focus()
+        } else {
+            alert('Por favor, preencha todos os dados do aluno.')
+        }
     });
 
     botaoVoltar.addEventListener('click', () => {
