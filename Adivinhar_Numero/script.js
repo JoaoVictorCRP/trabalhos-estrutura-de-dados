@@ -1,28 +1,28 @@
-const minNum = document.querySelector('.min')
-const maxNum = document.querySelector('.max')
+const minNum_input = document.querySelector('.min')
+const maxNum_input = document.querySelector('.max')
 const btnIntervalo = document.querySelector('.def-intervalo')
 
 function addFormChute(){
     const formChute = document.querySelector('.form-chute');
     // Exibindo o label
-    // const label = document.querySelector('.label-cht')
-    // label.style.display = block;
+    const label = document.querySelector('.label-cht')
+    label.style.display = 'block';
     // Adicionando o input
-    const input = document.createElement('input');
-    input.className = "input-chute";
-    input.type = 'number';
-    // Adicionando o botão
-    const btnSubmit = document.createElement('button');
-    btnSubmit.type = 'submit';
-    formChute.appendChild(input, btnSubmit);
-    // <input type="number" class="input-chute">
-    // <button type="submit">Ok</button>
+    const input = document.querySelector('.input-chute');
+    input.style.display='block';
+    // input.className = "input-chute";
+    // input.textContent = 'OK'
+    // input.type = 'number';
+    // formChute.appendChild(input);
+    // Exibindo o botão de ok
+    const btnSubmit = document.querySelector('.btn-ok');
+    btnSubmit.style.display = 'block'
 }
 
 function confirmaInvervalo(){
     // Validação do intervalo
-    let menor = Number(minNum.value)
-    let maior = Number(maxNum.value)
+    let menor = Number(minNum_input.value)
+    let maior = Number(maxNum_input.value)
     if(!(menor && maior) || (menor==maior) || (menor>maior)){
         alert('Insira um intervalo válido!')
         return
