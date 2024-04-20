@@ -1,21 +1,40 @@
-const min_num = document.querySelector('.min')
-const max_num = document.querySelector('.max')
-const btn_intervalo = document.querySelector('.def-intervalo')
+const minNum = document.querySelector('.min')
+const maxNum = document.querySelector('.max')
+const btnIntervalo = document.querySelector('.def-intervalo')
 
+function addFormChute(){
+    const formChute = document.querySelector('.form-chute');
+    // Exibindo o label
+    // const label = document.querySelector('.label-cht')
+    // label.style.display = block;
+    // Adicionando o input
+    const input = document.createElement('input');
+    input.className = "input-chute";
+    input.type = 'number';
+    // Adicionando o botão
+    const btnSubmit = document.createElement('button');
+    btnSubmit.type = 'submit';
+    formChute.appendChild(input, btnSubmit);
+    // <input type="number" class="input-chute">
+    // <button type="submit">Ok</button>
+}
 
-function confirma_invervalo(){
+function confirmaInvervalo(){
     // Validação do intervalo
-    if(!(min_num.value && max_num.value) || (min_num.value==max_num.value) || (min_num.value>max_num.value)){
+    let menor = Number(minNum.value)
+    let maior = Number(maxNum.value)
+    if(!(menor && maior) || (menor==maior) || (menor>maior)){
         alert('Insira um intervalo válido!')
         return
     }
     const resIntervalo = document.querySelector('.interval')
     const tituloIntervalo = document.querySelector('.int-titulo')
     tituloIntervalo.innerHTML = `Intervalo Definido!`
-    resIntervalo.innerHTML = `Agora chute um número do <b>${min_num.value}</b> ao <b>${max_num.value}</b>`
+    resIntervalo.innerHTML = `Agora chute um número do <b>${menor}</b> ao <b>${maior}</b>:`
+    addFormChute()
 }
 
-btn_intervalo.addEventListener('click',(e)=>{
+btnIntervalo.addEventListener('click',(e)=>{
     e.preventDefault()
-    confirma_invervalo()
+    confirmaInvervalo()
 })
