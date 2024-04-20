@@ -19,15 +19,17 @@
             </ul>  
         </p>
 
-        <h4>Insira o intervalo: </h4>
+        <h4 class="int-titulo">Insira o intervalo: </h4>
         <div class="interval">
-            De: <input style="max-width: 30px;" type="number">&nbsp;&nbsp;Ao:&nbsp;&nbsp;<input style="max-width: 30px;" type="number">
+            De: <input style="max-width: 30px;" type="number" class="min">&nbsp;&nbsp;Ao:&nbsp;&nbsp;<input style="max-width: 30px;" type="number" class="max">
+            <button type="submit" class="def-intervalo"> Definir</button>
         </div>
 
     </section>
 
-    <form>
-        <input type="number">
+    <form class="form-chute">
+        <label for="input-chute" style="color: #fff; font-weight: bold;">Seu chute:</label>
+        <input type="number" class="input-chute">
         <button type="submit">Ok</button>
     </form>
 
@@ -36,5 +38,6 @@
 
         </p>
     </section>
+    <script src="./script.js"></script>
 </body>
 </html>

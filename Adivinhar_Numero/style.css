@@ -28,3 +28,7 @@ form {
     text-align: center;
     size: 40px;
 }
+
+.input-chute {
+    max-width: 30px;
+}
