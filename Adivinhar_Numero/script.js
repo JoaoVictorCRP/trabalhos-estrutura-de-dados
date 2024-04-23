@@ -22,8 +22,8 @@ function addFormChute(numSorteado, min, max){
         e.preventDefault()
         valorChutado = Number(input.value)
         validaChute(valorChutado,numSorteado)
-        console.log(`Save inicio: ${ultimoInicio}, fim: ${ultimoFim}`)
-        dica(numSorteado, min, max)
+        // console.log(`Save inicio: ${ultimoInicio}, fim: ${ultimoFim}`)
+        dicaBinaria(numSorteado, min, max)
     })
 }
 
@@ -42,7 +42,7 @@ function validaChute(chute, alvo){
     }
 }
 
-function dica(alvo, min, max){
+function dicaBinaria(alvo, min, max){
     let inicio; let fim
 
     if((ultimoFim && ultimoInicio) || (ultimoFim && ultimoInicio==0)){
