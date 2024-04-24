@@ -65,7 +65,16 @@ function dicaBinaria(alvo, min, max){
     // console.log(`inicio é ${inicio}, O fim é: ${fim} `)
     ultimoInicio = inicio;
     ultimoFim = fim;
+    exibeDica(inicio, fim)
 }
+
+function exibeDica(inicio, fim){
+    const snack = document.querySelector('#snackbar')
+    snack.className = "show";
+    snack.innerHTML = `DICA BINÁRIA: O número está entre <b>${inicio}</b> e <b>${fim}</b>`
+    setTimeout(() => { snack.className.replace('show', ""); }, 3000)
+}
+
 function confirmaInvervalo(){
     // Validação do intervalo
     let menor = Number(minNum_input.value)
