@@ -25,19 +25,19 @@ form {
 }
 .interval {
     text-align: center;
-    size: 40px;
 }
 .input-chute {
-    max-width: 30px;
+    max-width: 50px;
 }
 #snackbar {
     visibility: hidden;
     min-width: 200px;
-    margin-left: -125px; 
-    background-color: #333; 
+    margin-left: -150px; 
+    background-color: #61AFFF; 
     color: #fff; 
-    text-align: center; 
-    border-radius: 2px; 
+    text-align: center;
+    border: #000; 
+    border-radius: 20px; 
     padding: 16px; 
     position: fixed; 
     z-index: 1; 
@@ -49,7 +49,7 @@ form {
     /* Animação de meio segundo de entrada e saída. fade out atrasado em 2.5seg*/
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    }
+}
 
 /* Animações de transição */
 @-webkit-keyframes fadein {

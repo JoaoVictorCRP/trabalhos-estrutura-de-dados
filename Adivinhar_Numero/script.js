@@ -2,6 +2,7 @@ const minNum_input = document.querySelector('.min');
 const maxNum_input = document.querySelector('.max');
 const btnIntervalo = document.querySelector('.def-intervalo');
 let vidasRestantes = 5;
+let venceu = false;
 let numMedio; let ultimoInicio; let ultimoFim;
 
 function gerarNumAleatorio(min, max){
@@ -24,21 +25,27 @@ function addFormChute(numSorteado, min, max){
         validaChute(valorChutado,numSorteado)
         // console.log(`Save inicio: ${ultimoInicio}, fim: ${ultimoFim}`)
         dicaBinaria(numSorteado, min, max)
+        console.log(`Restam ${vidasRestantes} vidas.`)
     })
 }
 
 function validaChute(chute, alvo){
+    if(vidasRestantes===0){
+        return alert('Já eras...')
+    }
+    if(venceu){
+        return alert('Você já venceu, doido.')
+    }
+
     if(chute===alvo){
         alert('Você venceu!')
+        venceu = true;
     } else if (chute>alvo){
-        alert('Muito alto!')
+        alert(`Muito alto!\n\nRESTAM ${vidasRestantes} TENTATIVAS`)
         vidasRestantes--
     } else {
-        alert('Muito baixo!')
+        alert(`Muito baixo!\n\nRESTAM ${vidasRestantes} TENTATIVAS`)
         vidasRestantes--;
-    }
-    if(vidasRestantes===0){
-        console.log('Já eras...')
     }
 }
 
@@ -52,7 +59,7 @@ function dicaBinaria(alvo, min, max){
     } else {
         [inicio, fim] = [min, max]
     }
-    // console.log(`Número entre ${inicio} e ${fim}`)
+    console.log(`Número entre ${inicio} e ${fim}`)
     numMedio = Math.floor((inicio+fim)/2)
     // console.log(`Número médio é: ${numMedio}`)
     if(numMedio==alvo){
