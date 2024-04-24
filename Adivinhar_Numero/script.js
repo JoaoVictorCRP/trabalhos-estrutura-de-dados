@@ -22,14 +22,11 @@ function addFormChute(numSorteado, min, max){
     btnSubmit.addEventListener('click', (e) => {
         e.preventDefault()
         valorChutado = Number(input.value)
-        validaChute(valorChutado,numSorteado)
-        // console.log(`Save inicio: ${ultimoInicio}, fim: ${ultimoFim}`)
-        dicaBinaria(numSorteado, min, max)
-        console.log(`Restam ${vidasRestantes} vidas.`)
+        validaChute(valorChutado,numSorteado, min, max)
     })
 }
 
-function validaChute(chute, alvo){
+function validaChute(chute, alvo, min, max){
     if(vidasRestantes===0){
         return alert('Já eras...')
     }
@@ -47,6 +44,8 @@ function validaChute(chute, alvo){
         alert(`Muito baixo!\n\nRESTAM ${vidasRestantes} TENTATIVAS`)
         vidasRestantes--;
     }
+    dicaBinaria(alvo, min, max)
+    // console.log(`Restam ${vidasRestantes} vidas.`)
 }
 
 function dicaBinaria(alvo, min, max){

@@ -5,14 +5,14 @@ html{
 }
 body{
     background-color: #0059A3;
-
+    font-size: 20px;
 }
 .titulo, h3, h4 {
     color: #fff;
     text-align: center;
 }
 .sect-instrucoes{
-    max-width: 500px;
+    max-width: 650px;
     max-height: 800px;
     border: solid 1px #fff;
     border-radius: 15px;
@@ -30,13 +30,14 @@ form {
     max-width: 50px;
 }
 #snackbar {
+    font-weight: bold;
     visibility: hidden;
     min-width: 200px;
-    margin-left: -150px; 
+    margin-left: -205px; 
     background-color: #61AFFF; 
     color: #fff; 
     text-align: center;
-    border: #000; 
+    border: solid #fff; 
     border-radius: 20px; 
     padding: 16px; 
     position: fixed; 
