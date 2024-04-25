@@ -1,8 +1,7 @@
 const minNum_input = document.querySelector('.min');
 const maxNum_input = document.querySelector('.max');
 const btnIntervalo = document.querySelector('.def-intervalo');
-let vidasRestantes = 5;
-let venceu = false;
+let vidasRestantes = 10; // Obs: a 10ª vida não conta.
 let numMedio; let ultimoInicio; let ultimoFim;
 
 function gerarNumAleatorio(min, max){
@@ -23,26 +22,23 @@ function addFormChute(numSorteado, min, max){
         e.preventDefault()
         valorChutado = Number(input.value)
         validaChute(valorChutado,numSorteado, min, max)
+        input.focus()
     })
 }
 
 function validaChute(chute, alvo, min, max){
-    if(vidasRestantes===0){
-        return alert('Já eras...')
-    }
-    if(venceu){
-        return alert('Você já venceu, doido.')
+    if(vidasRestantes<=0){
+        return gameOver(alvo)
     }
 
     if(chute===alvo){
-        alert('Você venceu!')
-        venceu = true;
+        youWin();
     } else if (chute>alvo){
-        alert(`Muito alto!\n\nRESTAM ${vidasRestantes} TENTATIVAS`)
         vidasRestantes--
+        alert(`Muito alto!\n\nRESTAM ${vidasRestantes} TENTATIVAS`)
     } else {
-        alert(`Muito baixo!\n\nRESTAM ${vidasRestantes} TENTATIVAS`)
         vidasRestantes--;
+        alert(`Muito baixo!\n\nRESTAM ${vidasRestantes} TENTATIVAS`)
     }
     dicaBinaria(alvo, min, max)
     // console.log(`Restam ${vidasRestantes} vidas.`)
@@ -97,6 +93,16 @@ function confirmaInvervalo(){
     numAleatorio = gerarNumAleatorio(menor, maior)
     console.log(numAleatorio) /// PARA DEBUGAÇÃO APENAS, APAGAR DEPOIS.
     addFormChute(numAleatorio, menor, maior)
+}
+
+function gameOver(alvo){
+    alert(`Você perdeu! :(\nO número secreto era ${alvo}`)
+    location.href = 'index.html'
+}
+
+function youWin(){
+    alert('Você venceu! :)')
+    location.href = 'index.html'
 }
 
 btnIntervalo.addEventListener('click',(e)=>{

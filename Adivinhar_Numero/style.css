@@ -26,7 +26,7 @@ form {
 .interval {
     text-align: center;
 }
-.input-chute {
+input {
     max-width: 50px;
 }
 #snackbar {
@@ -43,7 +43,7 @@ form {
     position: fixed; 
     z-index: 1; 
     left: 50%; 
-    bottom: 30px; 
+    bottom: 20px; 
 }
 #snackbar.show { /* Função do js alterará a classe para show*/
     visibility: visible;
@@ -55,17 +55,17 @@ form {
 /* Animações de transição */
 @-webkit-keyframes fadein {
     from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
+    to {bottom: 20px; opacity: 1;}
 }
 @keyframes fadein {
     from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
+    to {bottom: 20px; opacity: 1;}
 }
 @-webkit-keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
+    from {bottom: 20px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
 @keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
+    from {bottom: 20px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
