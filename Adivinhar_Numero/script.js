@@ -1,7 +1,7 @@
 const minNum_input = document.querySelector('.min');
 const maxNum_input = document.querySelector('.max');
 const btnIntervalo = document.querySelector('.def-intervalo');
-let vidasRestantes = 10; // Obs: a 10ª vida não conta.
+let vidasRestantes = 10;
 let numMedio; let ultimoInicio; let ultimoFim;
 
 function gerarNumAleatorio(min, max){
@@ -27,11 +27,7 @@ function addFormChute(numSorteado, min, max){
 }
 
 function validaChute(chute, alvo, min, max){
-    if(vidasRestantes<=0){
-        return gameOver(alvo)
-    }
-
-    if(chute===alvo){
+     if(chute===alvo){
         youWin();
     } else if (chute>alvo){
         vidasRestantes--
@@ -42,6 +38,9 @@ function validaChute(chute, alvo, min, max){
     }
     dicaBinaria(alvo, min, max)
     // console.log(`Restam ${vidasRestantes} vidas.`)
+    if(vidasRestantes<=0){
+        return gameOver(alvo)
+    }
 }
 
 function dicaBinaria(alvo, min, max){
@@ -58,7 +57,7 @@ function dicaBinaria(alvo, min, max){
     numMedio = Math.floor((inicio+fim)/2)
     // console.log(`Número médio é: ${numMedio}`)
     if(numMedio==alvo){
-        console.log('É isso aí, meu garoto.')
+        console.log('O ponto médio é o número secreto, a dica binária para por aqui.')
     } else if(numMedio>alvo){
         fim = numMedio-1
     } else {
@@ -91,7 +90,7 @@ function confirmaInvervalo(){
     tituloIntervalo.innerHTML = `Intervalo Definido!`
     resIntervalo.innerHTML = `Agora chute um número do <b>${menor}</b> ao <b>${maior}</b>:`
     numAleatorio = gerarNumAleatorio(menor, maior)
-    console.log(numAleatorio) /// PARA DEBUGAÇÃO APENAS, APAGAR DEPOIS.
+    //console.log(numAleatorio) /// PARA DEBUGAÇÃO APENAS, APAGAR DEPOIS.
     addFormChute(numAleatorio, menor, maior)
 }
 
